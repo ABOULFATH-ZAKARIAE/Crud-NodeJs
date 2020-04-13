@@ -2,43 +2,62 @@
 
 body{
   font-family: 'Poppins', sans-serif;
-font-size: 16px;
-line-height: 24px;
-font-weight: 400;
-color: #212112;
-background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
-background-position: center;
-background-repeat: repeat;
-background-size: 7%;
-background-color: #fff;
-overflow-x: hidden;
-transition: all 200ms linear;
-}
-.navbar{
-  background-color: grey;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	color: #212112;
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
+	background-position: center;
+	background-repeat: repeat;
+	background-size: 7%;
+	background-color: #fff;
+	overflow-x: hidden;
+  transition: all 200ms linear;
 }
 
-.container {
-  width: 100%;
-  height: auto;
+#container {
   display: flex;
-  justify-content: space-around;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  -ms-flex-align: center;
-  flex-direction: row;
+  max-width: 100%;
 }
 
-.flip-card img {
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+  }
+  
+  .grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  .grid > article img {
+    max-width: 100%;
+  }
+  
+  .grid .text {
+    padding: 20px;
+  }
+  .cc{
+    margin-top: 139px;
+  }
+
+  .flip-card img {
     width: 300px;
     height: 350px;
 }
 .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 350px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-    border-radius: 1%;
+  background-color: transparent;
+  width: 300px;
+  height: 350px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border-radius: 1%;
   }
   
   /* This container is needed to position the front and back side */
@@ -96,16 +115,19 @@ transition: all 200ms linear;
   .flip-card h1 {
       padding: 50px;
   }
-
+  
   .footer {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
-    background-color: grey;
+    background-color: #138496;
     text-align: center;
   }
   .navbar{
-    background-color: grey;
+    background-color: #138496;
   }
+
+
+

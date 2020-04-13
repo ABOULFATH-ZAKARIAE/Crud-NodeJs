@@ -20,59 +20,49 @@
 <body>
 		
 	<!-- Navabar -->
-	<nav class="navbar navbar-expand-lg navbar-dark  bg-info">
-		<div class="container">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="navbar-collapse collapse" id="navbar10">
-				<ul class="navbar-nav nav-fill w-100">
-					<li class="nav-item">
-						<a class="nav-link text-light" href="/">Home</a>
-					</li>
-					
-					<li class="nav-item">
-						<a class="nav-link text-light" href="/add">Add Movies</a>
-					</li>
-				
-				</ul>
-			</div>
-		</div>
-	</nav>
-		<h1 class="text-center mx-auto mt-5">Welcome To My Cenima</h1>
-	<div class="container">
-	<div class="row mx-auto">
-			<% card.forEach(d => { %>
-                    <div class="col mx-auto">
-                      <div class="flip-card">
-                          <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                              <img src="<%= d.imsr %>">
-                            </div>
-                            <div class="flip-card-back">
+<nav class="navbar navbar-expand-lg navbar-dark  bg-info">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+<div class="navbar-collapse collapse" id="navbar10">
+	<ul class="navbar-nav nav-fill w-100">
+		<li class="nav-item">
+			<a class="nav-link text-light" href="/">Home</a>
+		</li>		
+		<li class="nav-item">
+			<a class="nav-link text-light" href="/add">Add Movies</a>
+		</li>		
+	</ul>
+</div>
+</nav>
+<h1 class="text-center mx-auto mt-5">Welcome To My Cenima</h1>
+
+<div class="container" id="Container">
+    <div class="row mx-auto">
+        <% card.forEach(d => { %>
+            <div class="col mx-auto">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="<%= d.imsr %>">
+                         </div>
+                        <div class="flip-card-back">
                             <a href="/edit/<%= d.ID %>" style="color: white">
-                                    <button class="btn"><i class="fa fa-edit" id="Update"></i></button>
-                            </a>
-                              
+                                <button class="btn"><i class="fa fa-edit" id="Update"></i></button>
+                            </a>          
                             <a href="/delete/<%= d.ID %>" style="color: white" onclick="return confirm('are u sure ?')">
                                 <button class="btn"><i class="fa fa-trash" id="Delete"></i></button>
-                            </a>
-                              
-                              <h1><%= d.name %></h1>
-                              <p><%= d.year %></p>
-                              <p><%= d.discription %></p>
-                            </div>
-                          </div>
+                            </a>           
+                            <h1><%= d.name %></h1>
+                            <p><%= d.year %></p>
+                            <p><%= d.discription %></p>
                         </div>
                     </div>
-                  </div>
-                
-			<% }) %>
-			
-		</div>	
-	</div>
-	
-</div>	
+                </div>
+            </div>
+        <% }) %> 
+    </div>                    
+</div>
 <div class="footer">
 
     &copy;
